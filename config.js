@@ -15,5 +15,7 @@ window.OK_CONFIG = {
   // Turn on after enabling Firebase Storage (needs the Blaze plan) to allow video posts.
   videos: false,
   // The email you will sign in with. This account can moderate the app.
-  ownerEmail: 'fenixstar@virgilio.it'
+  ownerEmail: 'fenixstar@virgilio.it',
+  // GIF search key from klipy.com. Leave empty to hide the GIF buttons.
+  klipyKey: 'rF284GoekpLmZsIxKLSfkBYhUHdUa7It7BmLelWXahPne9yuC20E9HPt2rW2plOk'
 };
