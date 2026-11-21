@@ -1,13 +1,62 @@
 {
+  "id": "/",
   "name": "OkToChat",
   "short_name": "OkToChat",
+  "description": "Chat with friends, post, play OkToBrawl, listen to music and ask OkAI. Free, no ads.",
+  "lang": "en",
+  "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#ECECE8",
   "theme_color": "#ECECE8",
+  "categories": [
+    "social",
+    "entertainment",
+    "games"
+  ],
   "icons": [
-    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    {
+      "src": "icon-any-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-any-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/wide-today.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Your day at a glance: feed, chat, notes and more"
+    },
+    {
+      "src": "screenshots/wide-brawl.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "OkToBrawl: story, ranked and friends matches"
+    },
+    {
+      "src": "screenshots/narrow-brawl.png",
+      "sizes": "540x1170",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "OkToBrawl on any screen"
+    }
   ]
 }

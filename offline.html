@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OkToChat is offline</title>
+<style>
+:root{--bg:#ECECE8;--ink:#111110;--mut:#5E5D57;--y:#FFD21F}
+@media (prefers-color-scheme:dark){:root{--bg:#0D0D0C;--ink:#F1F1EE;--mut:#A09F99}}
+html,body{height:100%;margin:0}body{display:grid;place-items:center;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center;padding:24px;box-sizing:border-box}
+.ok{width:72px;height:72px;border-radius:18px;background:var(--y);color:#111;display:grid;place-items:center;font:800 28px system-ui;margin:0 auto 20px}
+h1{font-size:26px;letter-spacing:-.03em;margin:0 0 6px}p{color:var(--mut);margin:0 0 20px}
+button{border:0;border-radius:99px;background:var(--ink);color:var(--bg);font:700 15px system-ui;padding:12px 22px;cursor:pointer}
+</style></head><body><main>
+<div class="ok">OK</div><h1>You are offline</h1><p>OkToChat needs the internet to chat. Check your connection and try again.</p>
+<button onclick="location.reload()">Try again</button>
+</main></body></html>
