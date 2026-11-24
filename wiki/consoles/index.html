@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OkToChat on Nintendo DSi, 3DS and Wii</title>
+<meta name="description" content="OkToChat has homebrew apps for the Nintendo DSi, 3DS and Wii, and a DSi game called OkToChat Story.">
+<link rel="canonical" href="https://oktochat.github.io/wiki/consoles/">
+<meta property="og:title" content="OkToChat on Nintendo DSi, 3DS and Wii">
+<meta property="og:description" content="OkToChat has homebrew apps for the Nintendo DSi, 3DS and Wii, and a DSi game called OkToChat Story.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oktochat.github.io/wiki/consoles/">
+<meta property="og:image" content="https://oktochat.github.io/icon-512.png">
+<link rel="icon" href="../../icon-192.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "OkToChat", "applicationCategory": "SocialNetworkingApplication", "operatingSystem": "Android, Web, Nintendo DSi, Nintendo 3DS, Wii", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "url": "https://oktochat.github.io/", "description": "OkToChat is a free, ad-free chat app for Android and the web, with encrypted private chats, group calls, a feed, an AI assistant called OkAI, games and console apps for the Nintendo DSi, 3DS and Wii.", "publisher": {"@type": "Organization", "name": "Big_Shot_Inc"}}</script>
+<style>
+:root{--base:#ECECE8;--card:#F7F7F4;--ink:#111110;--muted:#5E5D57;--hair:rgba(17,17,16,.12);--signal:#FFD21F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--base:#0D0D0C;--card:#161615;--ink:#F1F1EE;--muted:#A09F99;--hair:rgba(241,241,238,.14)}}
+:root[data-theme="dark"]{--base:#0D0D0C;--card:#161615;--ink:#F1F1EE;--muted:#A09F99;--hair:rgba(241,241,238,.14)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--base);color:var(--ink);font:16px/1.6 Geist,system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:28px 16px 64px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.logo{width:44px;height:44px;border-radius:12px;background:var(--signal);color:#111110;display:grid;place-items:center;font:700 16px 'Geist Mono',monospace;letter-spacing:-.04em;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12)}
+header span{font-weight:800;font-size:18px;letter-spacing:-.02em}
+h1{font-size:clamp(32px,8vw,46px);line-height:1.05;letter-spacing:-.045em;margin:0 0 10px;font-weight:800}
+.date{font:500 13px 'Geist Mono',monospace;color:var(--muted);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:8px 22px 18px}
+h2{font-size:20px;letter-spacing:-.02em;margin:26px 0 6px}
+p,li{color:var(--ink)}
+p{margin:0 0 12px}
+ul{padding-left:20px;margin:0 0 12px} li{margin-bottom:6px}
+strong{font-weight:600}
+a{color:inherit;text-decoration-color:var(--signal);text-decoration-thickness:2px;text-underline-offset:3px}
+.contact{display:inline-block;background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:8px 12px;font-size:15px}
+footer{margin-top:28px;color:var(--muted);font-size:13px}
+
+.lead{font-size:18px}
+nav.wk{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+nav.wk a{background:var(--card);border:1px solid var(--hair);border-radius:999px;padding:5px 12px;font-size:14px;text-decoration:none}
+nav.wk a.on{background:var(--signal);color:#111110;border-color:transparent}
+.facts{display:grid;gap:0;border:1px solid var(--hair);border-radius:12px;overflow:hidden;margin:16px 0}
+.facts div{display:flex;gap:12px;padding:8px 14px;border-top:1px solid var(--hair);font-size:15px}
+.facts div:first-child{border-top:0}
+.facts span{width:120px;flex:none;color:var(--muted)}
+code{font:500 14px 'Geist Mono',monospace;background:var(--hair);padding:1px 5px;border-radius:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a href="../../" style="text-decoration:none;display:flex;align-items:center;gap:12px"><div class="logo">OK</div><span>OkToChat Wiki</span></a></header>
+<nav class="wk"><a href="../../wiki/">Overview</a><a href="../../wiki/features/">Features</a><a href="../../wiki/consoles/" class="on">Consoles and Story</a><a href="../../wiki/faq/">FAQ</a></nav>
+<h1>OkToChat on Nintendo DSi, 3DS and Wii</h1>
+<p class="date">Last updated 2026-11-24</p>
+<div class="card">
+<p>OkToChat has small homebrew apps that bring chatting to old Nintendo consoles. They need a console that can run homebrew software. The apps are free and can be downloaded from the OkToChat app (Account page) or the OkToChat website.</p>
+<h2 id="signin">Signing in</h2>
+<p>A console shows a short code. You type that code in the OkToChat app on your phone, and the console is linked to your account. The console then keeps a sign-in key on its SD card or memory. Messages sent from a console are marked with a small tag, like "from a DSi".</p>
+<h2 id="dsi">Nintendo DSi</h2>
+<p>The DSi app (OkToChatDS.nds) can read the feed, chat, talk to OkAI and ask OkAI for pictures, which are shown on the DSi screen. It also includes the game <strong>OkToChat Story</strong>.</p>
+<h2 id="3ds">Nintendo 3DS and Wii</h2>
+<p>The 3DS and Wii apps (OkToChat3DS and OkToChatWii) let you chat on OkToChat from those consoles. The Wii app runs from the Homebrew Channel.</p>
+<h2 id="story">OkToChat Story</h2>
+<p><strong>OkToChat Story: the In-Between</strong> is a short role-playing game for the Nintendo DSi, inside the OkToChat DSi app. Kai's OkToChat message gets stuck on "Sending..." and pulls him into the In-Between, a maze of strange places where unsent messages go. It mixes pixel art with real photographs of everyday objects and has a lightly creepy, mostly funny tone.</p>
+<ul>
+  <li><strong>6 levels</strong>: Yellow Halls (Sending...), The Pool Rooms (Unread), After-Hours Mall (The Feed), The Office That Never Ends (Moderation), Parking Level -99 (Low Signal) and Home? (Delivered).</li>
+  <li><strong>Battles</strong> where you can FIGHT, use an ITEM, LET GO of an enemy once it is calm, or TALK: you type anything you want to say, and OkAI decides how the enemy reacts. Then you dodge its attack with a small yellow OK square.</li>
+  <li><strong>Characters</strong> include Mira (Kai's rival), Bolt (a tiny robot "hero"), Gus (an arcade ghost stuck since 1998), Wanda (who sells exits), The Microwave (the save point) and The Landline, a rotary phone that rings in every level.</li>
+  <li><strong>6 endings</strong>, depending on who you spare, which choices you make and whether you answer The Landline.</li>
+</ul>
+</div>
+<footer><a href="../../">Open OkToChat</a> · <a href="../../privacy/">Privacy</a> · <a href="../../terms/">Terms</a> · oktosupport@virgilio.it</footer>
+</div>
+</body>
+</html>

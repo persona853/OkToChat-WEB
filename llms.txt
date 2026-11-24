@@ -1,0 +1,18 @@
+# OkToChat
+
+> OkToChat is a free, ad-free chat app for Android and the web, with encrypted private chats, group calls, a feed, an AI assistant called OkAI, games and console apps for the Nintendo DSi, 3DS and Wii.
+
+OkToChat is free, has no ads, no tracking and no subscriptions. Private messages are encrypted on the phone. Minimum age 16. Contact: oktosupport@virgilio.it
+
+## Wiki
+- [OkToChat Wiki](https://oktochat.github.io/wiki/): OkToChat is a free, ad-free chat app for Android and the web, with encrypted private chats, group calls, a feed, an AI assistant called OkAI, games and console apps for the Nintendo DSi, 3DS and Wii.
+- [OkToChat features](https://oktochat.github.io/wiki/features/): Everything OkToChat can do: encrypted chats, group calls, the feed, OkAI, music, drawing, games, OkToChat Pass and Plus.
+- [OkToChat on Nintendo DSi, 3DS and Wii](https://oktochat.github.io/wiki/consoles/): OkToChat has homebrew apps for the Nintendo DSi, 3DS and Wii, and a DSi game called OkToChat Story.
+- [OkToChat FAQ](https://oktochat.github.io/wiki/faq/): Answers to common questions about OkToChat: price, privacy, OkAI, age, games and console apps.
+
+## Policies
+- [Privacy policy](https://oktochat.github.io/privacy/)
+- [Terms of service](https://oktochat.github.io/terms/)
+
+## Optional
+- [Use OkToChat in the browser](https://oktochat.github.io/)

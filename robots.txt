@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /dl/
+
+Sitemap: https://oktochat.github.io/sitemap.xml
