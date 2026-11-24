@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>unsent</title>
+<style>
+html,body{margin:0;background:#0c0c0b;color:#d8cf9a;font:15px/1.5 "Courier New",monospace;min-height:100%}
+.w{max-width:680px;margin:0 auto;padding:40px 16px}
+input{background:none;border:0;border-bottom:1px solid #d8cf9a;color:#FFD21F;font:inherit;width:220px;outline:0;padding:4px 0}
+button{background:none;border:1px solid #d8cf9a;color:#d8cf9a;font:inherit;padding:6px 14px;cursor:pointer}
+button:disabled{opacity:.3;cursor:default}
+.dim{color:#6b6650}
+#page img{width:100%;display:block;margin:18px 0 10px;box-shadow:0 0 0 1px #222}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+a{color:#d8cf9a}
+</style>
+</head>
+<body>
+<div class="w">
+<div class="dim">THE UNSENT</div><br>
+<div id="lock"><div>this book is written in messages that never arrived.</div><br>
+<form id="f">say what you said: <input id="k" autocomplete="off" autocapitalize="off" spellcheck="false"> <button>open</button></form><br><div id="msg" class="dim"></div></div>
+<div id="book" hidden>
+<div class="bar"><button id="prev">&lt;</button><span id="n"></span><button id="next">&gt;</button><a id="save" download>save this page</a></div>
+<div id="page"></div>
+<div class="dim">every page has an answer. none of them are easy.</div>
+</div>
+</div>
+<script>
+let KEY = null, LIST = [], at = 0;
+const S = crypto.subtle, E = new TextEncoder();
+async function keyFor(word){ const base = await S.importKey('raw', E.encode(word), 'PBKDF2', false, ['deriveKey']);
+  return S.deriveKey({ name: 'PBKDF2', salt: E.encode('okt-unsent'), iterations: 250000, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']); }
+async function open(name){ const r = await fetch('p/' + name, { cache: 'no-store' }); const raw = new Uint8Array(await r.arrayBuffer()); return new Uint8Array(await S.decrypt({ name: 'AES-GCM', iv: raw.slice(0, 12) }, KEY, raw.slice(12))); }
+const cache = {};
+async function show(i){ at = Math.max(0, Math.min(LIST.length - 1, i)); document.getElementById('n').textContent = (at + 1) + ' / ' + LIST.length;
+  document.getElementById('prev').disabled = at === 0; document.getElementById('next').disabled = at === LIST.length - 1;
+  const [name, type] = LIST[at]; if (!cache[name]) cache[name] = URL.createObjectURL(new Blob([await open(name)], { type }));
+  document.getElementById('page').replaceChildren(Object.assign(document.createElement('img'), { src: cache[name], alt: 'page ' + (at + 1) }));
+  const s = document.getElementById('save'); s.href = cache[name]; s.download = 'unsent-' + String(at + 1).padStart(2, '0') + (type === 'image/png' ? '.png' : '.jpg'); }
+document.getElementById('f').onsubmit = async e => { e.preventDefault(); const m = document.getElementById('msg'); m.textContent = '...';
+  const word = document.getElementById('k').value.toLowerCase().replace(/[^a-z0-9]/g, '');
+  try { KEY = await keyFor(word); LIST = JSON.parse(new TextDecoder().decode(await open('index.bin'))); document.getElementById('lock').hidden = true; document.getElementById('book').hidden = false; show(0); }
+  catch(err){ KEY = null; m.textContent = 'sending...'; } };
+document.getElementById('prev').onclick = () => show(at - 1); document.getElementById('next').onclick = () => show(at + 1);
+addEventListener('keydown', e => { if (!KEY || document.getElementById('book').hidden) return; if (e.key === 'ArrowLeft') show(at - 1); if (e.key === 'ArrowRight') show(at + 1); });
+</script>
+</body>
+</html>
