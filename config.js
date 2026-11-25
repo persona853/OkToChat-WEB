@@ -14,8 +14,8 @@ window.OK_CONFIG = {
   },
   // Turn on after enabling Firebase Storage (needs the Blaze plan) to allow video posts.
   videos: false,
-  // The email you will sign in with. This account can moderate the app.
-  ownerEmail: 'fenixstar@virgilio.it',
+  // SHA-256 of the owner's sign-in email in lowercase (the email itself stays private). This account can moderate the app.
+  ownerHash: '5d94a86697e5dd750497df982088439179aefed09d56b21fcd5fb2df07cfd06c',
   // Firebase App Check (security pack): a reCAPTCHA v3 site key. Empty = off. See docs/SECURITY-SETUP.md.
   appCheckKey: '',
   // GIF search key from klipy.com. Leave empty to hide the GIF buttons.
