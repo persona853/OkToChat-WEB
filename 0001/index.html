@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>0001</title>
+<style>
+  html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:ui-monospace,"Courier New",monospace}
+  #v{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.05) brightness(.96)}
+  #tap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;color:#d8cf9a;
+       letter-spacing:.3em;font-size:14px;background:#000;z-index:3;cursor:pointer}
+  #tag{position:fixed;left:14px;bottom:12px;color:#5a5338;font-size:11px;letter-spacing:.25em;z-index:2;opacity:.7}
+  .blink{animation:b 1.4s steps(1) infinite}@keyframes b{50%{opacity:.15}}
+</style>
+</head>
+<body>
+<video id="v" playsinline loop muted preload="auto">
+  <source src="0002.mp4" type="video/mp4">
+</video>
+<div id="tap"><span class="blink">sending...</span></div>
+<div id="tag">0001</div>
+<script>
+  var v=document.getElementById('v'),t=document.getElementById('tap');
+  // try muted autoplay immediately
+  v.play().catch(function(){});
+  t.addEventListener('click',function(){ v.muted=false; v.play().catch(function(){}); t.style.display='none'; });
+  // if muted autoplay worked, keep the tap overlay only to enable sound
+</script>
+</body>
+</html>
