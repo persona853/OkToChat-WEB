@@ -9,6 +9,7 @@
   html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:ui-monospace,"Courier New",monospace}
   #v{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.05) brightness(.96);background:#000}
   #snd{position:fixed;right:14px;bottom:12px;color:#d8cf9a;font-size:12px;letter-spacing:.2em;z-index:3;opacity:.8;cursor:pointer}
+  #vc{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:3;white-space:nowrap;background:#c0c0c0;padding:2px 6px;border:2px outset #e0e0e0}
   #tag{position:fixed;left:14px;bottom:12px;color:#5a5338;font-size:11px;letter-spacing:.25em;z-index:2;opacity:.7}
 </style>
 </head>
@@ -17,6 +18,7 @@
   <source src="0001.mp4" type="video/mp4">
 </video>
 <div id="snd">&#128263; tap for sound</div>
+<div id="vc"><font face="Times New Roman" size="2" color="#000000">visitors: </font><font face="Courier New" color="#00FF00" style="background:#000000">&nbsp;<span id="vn">--------</span>&nbsp;</font></div>
 <div id="tag">0001</div>
 <script>
   var v=document.getElementById('v'),s=document.getElementById('snd');
@@ -24,6 +26,14 @@
   // any tap: unmute + ensure playing, then hide the hint
   function on(){ v.muted=false; v.play().catch(function(){}); s.style.display='none'; }
   s.addEventListener('click',on); document.body.addEventListener('click',on,{once:true});
+
+  (function(){ var K='AIzaSyCxvvYwt88REraNfd_g83EDyognSN1KRcM', P='projects/oktochat-8dadf/databases/(default)/documents', D=P+'/counters/p0001', U='https://firestore.googleapis.com/v1/';
+    var el=document.getElementById('vn'); function show(n){ el.textContent=String(n).padStart(8,'0'); }
+    function read(){ return fetch(U+D+'?key='+K).then(function(r){ return r.status==404?{}:r.json(); }).then(function(j){ return +(j.fields&&j.fields.n&&j.fields.n.integerValue)||0; }); }
+    var seen=false; try{ seen=!!localStorage.getItem('v0001'); }catch(e){}
+    var go=seen?Promise.resolve():fetch(U+P+':commit?key='+K,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({writes:[{transform:{document:D,fieldTransforms:[{fieldPath:'n',increment:{integerValue:'1'}}]}}]})}).then(function(r){ if(r.ok){ try{ localStorage.setItem('v0001','1'); }catch(e){} } }).catch(function(){});
+    go.then(read).then(show).catch(function(){});
+  })();
 </script>
 </body>
 </html>
